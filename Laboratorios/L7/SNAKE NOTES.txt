@@ -1,0 +1,4 @@
+SNAKE GAME:
+
+Perform ADC conversion of AN17 (pin 24 in Proteus) since it has de LDR circuit bound
+Change CCP module to the module 5, it is the only one available right without too many changes in the PCB

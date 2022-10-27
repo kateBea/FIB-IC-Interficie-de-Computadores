@@ -1,0 +1,45 @@
+SETTING UP PWM CCP1 WORKING WITH TIMER 2
+
+REGISTERS INVOLVED
+
+CCP1CON 	-> CCP1 control register
+CCPR1		-> Data register
+CCPTMRS0	-> CCP1 timer select
+
+
+SETUP:
+/*Basic setup*/
+CCPTMRS0bits.C1TSEL = 0b00; 	//PWD working with Timer 2
+CCP1CONbits.CCP1M   = 0b1100; 	//CCP1 on PWM mode
+CCP1CONbits.DC1B    = 0b01;	//Lower two bits of duty cycle ratio
+CCP1L		    = 0b011111;	//Most significant 6 bits of duty cycle ratio
+TRISCbits.RC2	    = 0; 	//RC2 setup for output (LED)
+ANSELCbits.RC2      = 1;	//RC2 pin for analog output
+
+/*Timer2 setup*/
+T2CONbits.T2OUTPS = 0b0000;	//postscaler select value (1:1)
+T2CONbits.TMR2ON = 1;		//Enable timer 2
+T2CONbits.T2CKPS = 11; 		//Prescaler select bit (prescaler is 16)
+PR2 = 124;			//Load PR2 with PMW period value
+
+
+/*Interrupts setup*/
+INTCONbits.GIE = 1;		//enable all unmasked interrupts
+INTCONbits.PEIE = 1;		//Enable periperal interrupts
+
+RCONbits.IPEN = 0;		//disable interup priorities
+PIR1bits.TMR2IF = 0;		//clear timer 2 interupt flag bit
+IPR1bits.TMR2IF = 1;		//timer 2 interupt priority high (does not really matter)
+PIE1bits.TMR2IE = 1;		//enable interrupts for timer 2
+
+void interrupt tmr2CCP(void)
+{
+	if (PIR1bits.TMR2IF && PIE1bits.TMR2IE)
+	{
+		PIR1bits.TMR2IF = 0;
+		
+
+	}
+}
+
+Interrupt for timer 2 not necessary

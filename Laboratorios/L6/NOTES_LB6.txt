@@ -1,0 +1,34 @@
+NOTE ADC RESULT MUST BE CONSULTED VIA INTERRUPT, BUSY WAIT STOPS PIC18 FROM RUNNING ANY OTHER FUNCTIONALITIES WE HAVE IN THE MCU CURRENTLY:
+
+The PIC18 has a 10-bit A/D Successive Approximations converter.
+
+- The number of analog inputs varies among different PIC18 devices.
+- The A/D converter has the following registers: 
+
+   •A/D Result High Register (ADRESH) 
+   •A/D Result Low Register (ADRESL) 
+   •A/D Control Register 0 (ADCON0) (source selection) 
+   •A/D Control Register 1 (ADCON1) (reference selection) 
+   •A/D Control Register 2 (ADCON2) (timing selections)
+
+- The contents of these registers vary with the PIC18 members.
+- Other parameters must be considered: ANSELX (pin configurations), ADIF, ADIE, ADIP (for AD interrupt).
+
+A/D Registers setup
+TRISEbits.TRISE1 = 1;		//Pin AN6 as input
+ANSELEbits.ANSEL1 = 1;		//Pin AN6 for alaog I/O
+ADCON0bits.CHS	= 0b00110; 	//analog channel select (channel AN6)
+ADCON0bits.ADON = 1;		//ADC enabled
+
+ADCON1bits.PVCFG = 0b00;	//Positive voltage reference select
+ADCON1bits.NVCFG = 0b00;	//Negative voltage reference select
+
+ADCON2bits.ADFM = 0;		//A/D Conversion result format Left justified ADRESH + ADRESL<7:6>
+ADCON2bits.ACQT = 0b010;		//A/D acquisition time
+ADCON2bits.ADCS = 0b001;	//A/D conversion clock is Instruction cycle clock (Tcy)
+
+PIR1bits.ADIF = 0;		//clear A/D conversion interrup flag bit
+IPR1bits.ADIP = 1;		//A/D interrupt on high priority
+PIE1bits.ADIE = 1;		//A/D interrupts enabled
+
+

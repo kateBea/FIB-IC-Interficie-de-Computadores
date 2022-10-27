@@ -1,0 +1,149 @@
+/* 
+ * Created:   2022
+ * Processor: PIC18F45K22
+ * Compiler:  MPLAB XC8
+ */
+
+#include <xc.h>
+#include <string.h>
+#include <stdio.h>
+#include "config.h"
+#include "GLCD.h"
+#define _XTAL_FREQ 8000000  
+
+#define bool char
+#define true 1
+#define false 0
+
+void interrupt tmr2CCP(void)
+{
+   if (PIR1bits.TMR2IF && PIE1bits.TMR2IE)
+   {
+      PIR1bits.TMR2IF = 0;
+      
+   }
+}
+
+void setupTMR2(void)
+{
+   T2CONbits.T2OUTPS = 0b0000;	//postscaler select value (1:1)
+   T2CONbits.T2CKPS = 0b11; 	//Prescaler select bit (prescaler is 16)
+   PR2 = 124;	
+   TMR2 = 0;
+   
+   /*Interrupts setup*/
+   INTCONbits.GIE = 1;		//enable all unmasked interrupts
+   INTCONbits.PEIE = 1;		//Enable periperal interrupts
+
+   RCONbits.IPEN = 0;		//disable interup priorities
+   PIR1bits.TMR2IF = 0;		//clear timer 2 interupt flag bit
+   IPR1bits.TMR2IP = 1;		//timer 2 interupt priority high (does not really matter)
+   PIE1bits.TMR2IE = 1;		//enable interrupts for timer 2
+   T2CONbits.TMR2ON = 1;	//Enable timer 2 
+}
+
+void setupCCP2Module(void)
+{
+   CCPTMRS0bits.C1TSEL 	= 0b00; 	//PWD working with Timer 2
+   CCP1CONbits.CCP1M   	= 0b1100; 	//CCP1 on PWM mode
+   CCP1CONbits.DC1B    	= 0b01;		//Lower two bits of duty cycle ratio
+   CCPR1L		= 0b00011111;	//Most significant 6 bits of duty cycle ratio      
+}
+
+void main(void)
+{
+   ANSELA=0x00;		//Setup pins for digital I/O 
+   ANSELB=0x00;         //Setup pins for digital I/O 
+   ANSELD=0x00;		//Setup pins for digital I/O 
+   ANSELE=0x00;		//Setup pins for digital I/O    
+   
+   TRISD=0x00;		//All pins as output		   
+   TRISB=0x00;		//All pins as output
+   TRISCbits.RC2 = 0;	//RC2 setup for output (LED)
+   TRISA = 0x0F;
+    
+   PORTD=0x00;
+   PORTB=0x00;  
+   
+   GLCDinit();		   //Inicialitzem la pantalla
+   clearGLCD(0,7,0,127);   //Esborrem pantalla
+   setStartLine(0);        //Definim linia d'inici
+   
+   setupCCP2Module();
+   setupTMR2();
+   
+   bool ra0pressed = false;
+   bool ra1pressed = false;
+   bool ra2pressed = false;
+   bool ra3pressed = false;
+   T2CONbits.TMR2ON = 1;		//Enable timer 2
+   putchGLCD(0, 24, '%');
+   char duty_cycle_ratio = 50;
+   char state = 50;
+   for (int i  = 0; i <= duty_cycle_ratio; ++i) writeByte(0, i, 0xFF);
+   writeNum(0, 21, duty_cycle_ratio);
+   while (1)
+   {
+	 state = duty_cycle_ratio;
+      
+	 /*duty cycle control*/
+	 if (PORTAbits.RA0) ra0pressed = true;
+	 else if (!PORTAbits.RA0 && ra0pressed) 
+	 {
+	       /*increase duty cycle ratio*/
+	       ra0pressed = false;
+	       if (duty_cycle_ratio < 100)
+	       {
+		     ++duty_cycle_ratio; 
+	       }
+	 }
+	 
+	 if (PORTAbits.RA1) ra1pressed = true;
+	 else if (!PORTAbits.RA1 && ra1pressed) 
+	 {
+	       /*decrease duty cycle ratio*/
+	       ra1pressed = false;
+	       if (duty_cycle_ratio > 0)
+	       {
+		     --duty_cycle_ratio;
+	       }
+	 }
+	 
+	 /*frequency control*/
+	 if (PORTAbits.RA2) ra2pressed = true;
+	 else if (!PORTAbits.RA2 && ra2pressed) 
+	 {
+	       /*increase frequency*/
+	       ra2pressed = false;
+	       PR2 += 10;
+	 }
+	 
+	 if (PORTAbits.RA3) ra3pressed = true;
+	 else if (!PORTAbits.RA3 && ra3pressed) 
+	 {
+	       /*decrease frequency*/
+	       ra3pressed = false;
+	       PR2 -= 10;
+	 }
+	 
+	 /*print glcd*/
+	 if (state != duty_cycle_ratio)
+	 {
+	    if (duty_cycle_ratio > state) for (int i  = state; i <= duty_cycle_ratio; ++i) writeByte(0, i, 0xFF); 
+	    else if (duty_cycle_ratio < state) for (int i  = state; i >= duty_cycle_ratio; --i) writeByte(0, i, 0x00);
+	    
+	    char buffer[4];
+	    if (duty_cycle_ratio < 10) sprintf(buffer,"%d  ", duty_cycle_ratio);
+	    else if (state > 99 && duty_cycle_ratio < 100) sprintf(buffer,"%d ", duty_cycle_ratio); 
+	    else if (state < 100 && duty_cycle_ratio > 99) sprintf(buffer,"%d", duty_cycle_ratio);
+	    else if (state < 10 && duty_cycle_ratio > 9) sprintf(buffer,"%d ", duty_cycle_ratio);
+	    else sprintf(buffer,"%d ", duty_cycle_ratio);
+	    writeTxt(0, 21, buffer);
+	 }
+	
+	CCP1CONbits.DC1B = (duty_cycle_ratio * 5) & 0b11; 	//Lower two bits of duty cycle ratio
+	CCPR1L = (duty_cycle_ratio * 5) >> 2;		//Most significant 6 bits of duty cycle ratio 
+	  
+      
+   }
+}
