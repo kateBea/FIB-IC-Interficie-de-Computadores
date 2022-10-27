@@ -1,0 +1,588 @@
+[p GLOBOPT AUTOSTATIC LFSROK ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K22 ]
+[d frameptr 4065 ]
+"35 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[e E6148 Direction `uc
+UP 0
+DOWN 1
+LEFT 2
+RIGHT 3
+NONE 4
+]
+"44 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/GLCD.c
+[v _GLCDBusyWait GLCDBusyWait `(v  1 e 1 0 ]
+"75
+[v _sendGLCDCommand sendGLCDCommand `(v  1 e 1 0 ]
+"100
+[v _setStartLine setStartLine `(v  1 e 1 0 ]
+"108
+[v _setXAddress setXAddress `(v  1 e 1 0 ]
+"116
+[v _setYAddress setYAddress `(v  1 e 1 0 ]
+"138
+[v _GLCDinit GLCDinit `(v  1 e 1 0 ]
+"148
+[v _writeByte writeByte `(v  1 e 1 0 ]
+"175
+[v _readByteReal readByteReal `(uc  1 e 1 0 ]
+"212
+[v _readByte readByte `(uc  1 e 1 0 ]
+"222
+[v _clearGLCD clearGLCD `(v  1 e 1 0 ]
+"232
+[v _writeTxt writeTxt `(v  1 e 1 0 ]
+"242
+[v _SetDot SetDot `(v  1 e 1 0 ]
+"250
+[v _ClearDot ClearDot `(v  1 e 1 0 ]
+"260
+[v _putchGLCD putchGLCD `(v  1 e 1 0 ]
+"278
+[v _writeNum writeNum `(v  1 e 1 0 ]
+"68 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _append append `(v  1 e 1 0 ]
+"90
+[v _pos_ok pos_ok `(uc  1 e 1 0 ]
+"109
+[v _advance advance `(v  1 e 1 0 ]
+"127
+[v _configPIC configPIC `(v  1 e 1 0 ]
+"148
+[v _setupUI setupUI `(v  1 e 1 0 ]
+"161
+[v _setupGame setupGame `(v  1 e 1 0 ]
+"175
+[v _main main `(v  1 e 1 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"12 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\Umul64.c
+[v ___omul __omul `(ul  1 e 4 0 ]
+"5 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/ascii.h
+[v _font5x7 font5x7 `C[500]uc  1 e 500 0 ]
+"35 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _DIR DIR `uc  1 e 1 0 ]
+"45
+[v _apple apple `C[5]uc  1 e 5 0 ]
+"53 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\include\proc\pic18f45k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"98
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"148
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+"199
+[v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
+"261
+[v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
+[s S54 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"6366
+[s S137 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+]
+[s S144 . 1 `uc 1 C12IN0M 1 0 :1:0 
+`uc 1 C12IN1M 1 0 :1:1 
+`uc 1 C2INP 1 0 :1:2 
+`uc 1 C1INP 1 0 :1:3 
+`uc 1 C1OUT 1 0 :1:4 
+`uc 1 C2OUT 1 0 :1:5 
+]
+[s S151 . 1 `uc 1 C12IN0N 1 0 :1:0 
+`uc 1 C12IN1N 1 0 :1:1 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 SS 1 0 :1:5 
+]
+[s S158 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS 1 0 :1:5 
+]
+[s S161 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFN 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SRQ 1 0 :1:4 
+`uc 1 nSS 1 0 :1:5 
+]
+[s S167 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CVREF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S172 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 DACOUT 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S177 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SS1 1 0 :1:5 
+]
+[s S180 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS1 1 0 :1:5 
+]
+[s S183 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 nSS1 1 0 :1:5 
+]
+[s S186 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRNQ 1 0 :1:5 
+]
+[s S189 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 RJPU 1 0 :1:7 
+]
+[u S193 . 1 `S54 1 . 1 0 `S137 1 . 1 0 `S144 1 . 1 0 `S151 1 . 1 0 `S158 1 . 1 0 `S161 1 . 1 0 `S167 1 . 1 0 `S172 1 . 1 0 `S177 1 . 1 0 `S180 1 . 1 0 `S183 1 . 1 0 `S186 1 . 1 0 `S189 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES193  1 e 1 @3968 ]
+"6566
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S392 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"6636
+[s S401 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 CCP2 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S410 . 1 `uc 1 AN12 1 0 :1:0 
+`uc 1 AN10 1 0 :1:1 
+`uc 1 AN8 1 0 :1:2 
+`uc 1 AN9 1 0 :1:3 
+`uc 1 AN11 1 0 :1:4 
+`uc 1 AN13 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S419 . 1 `uc 1 FLT0 1 0 :1:0 
+`uc 1 C12IN3M 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2M 1 0 :1:3 
+`uc 1 T5G 1 0 :1:4 
+`uc 1 T1G 1 0 :1:5 
+]
+[s S426 . 1 `uc 1 SRI 1 0 :1:0 
+`uc 1 C12IN3N 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2N 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CCP3 1 0 :1:5 
+]
+[s S433 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CTED1 1 0 :1:2 
+`uc 1 CTED2 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 T3CKI 1 0 :1:5 
+]
+[s S439 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 P2A 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 P3A 1 0 :1:5 
+]
+[s S444 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S447 . 1 `S392 1 . 1 0 `S401 1 . 1 0 `S410 1 . 1 0 `S419 1 . 1 0 `S426 1 . 1 0 `S433 1 . 1 0 `S439 1 . 1 0 `S444 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES447  1 e 1 @3969 ]
+"7143
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S45 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"8093
+[u S63 . 1 `S45 1 . 1 0 `S54 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES63  1 e 1 @3986 ]
+"8283
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"8727
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\rand.c
+[v _randx randx `l  1 s 4 randx ]
+"175 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"275
+[v main@i_389 i `i  1 a 2 8 ]
+"266
+[v main@i i `i  1 a 2 6 ]
+"241
+[v main@pos_ret pos_ret `uc  1 a 1 4 ]
+[s S30 pos 2 `uc 1 y 1 0 `uc 1 x 1 1 ]
+"191
+[s S33 Serpent 65 `[31]S30 1 _body 62 0 `uc 1 _head_idx 1 62 `uc 1 _tail_idx 1 63 `uc 1 size 1 64 ]
+[v main@_serp _serp `S33  1 a 65 12 ]
+"190
+[v main@_apple _apple `S30  1 a 2 10 ]
+"199
+[v main@apple_count apple_count `i  1 a 2 0 ]
+"183
+[v main@pressed pressed `uc  1 a 1 5 ]
+"185
+[v main@can_go_down can_go_down `uc  1 a 1 3 ]
+"184
+[v main@can_move can_move `uc  1 a 1 2 ]
+"283
+} 0
+"278 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/GLCD.c
+[v _writeNum writeNum `(v  1 e 1 0 ]
+{
+[v writeNum@p p `uc  1 a 1 wreg ]
+"282
+[v writeNum@arr arr `[32]uc  1 a 32 24 ]
+"289
+[v writeNum@j j `i  1 a 2 57 ]
+"278
+[v writeNum@p p `uc  1 a 1 wreg ]
+[v writeNum@y y `uc  1 p 1 20 ]
+[v writeNum@i i `i  1 p 2 21 ]
+"283
+[v writeNum@p p `uc  1 a 1 56 ]
+"305
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"148 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _setupUI setupUI `(v  1 e 1 0 ]
+{
+"155
+[v setupUI@i_343 i `i  1 a 2 36 ]
+"153
+[v setupUI@i_342 i `i  1 a 2 34 ]
+"152
+[v setupUI@i_341 i `i  1 a 2 32 ]
+"151
+[v setupUI@i_340 i `i  1 a 2 30 ]
+"150
+[v setupUI@i i `i  1 a 2 28 ]
+"156
+[v setupUI@str str `*.25Cuc  1 a 2 26 ]
+"158
+} 0
+"232 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/GLCD.c
+[v _writeTxt writeTxt `(v  1 e 1 0 ]
+{
+[v writeTxt@page page `uc  1 a 1 wreg ]
+"233
+[v writeTxt@i i `i  1 a 2 24 ]
+"232
+[v writeTxt@page page `uc  1 a 1 wreg ]
+[v writeTxt@y y `uc  1 p 1 20 ]
+[v writeTxt@s s `*.25Cuc  1 p 2 21 ]
+[v writeTxt@page page `uc  1 a 1 23 ]
+"239
+} 0
+"260
+[v _putchGLCD putchGLCD `(v  1 e 1 0 ]
+{
+[v putchGLCD@p p `uc  1 a 1 wreg ]
+"263
+[v putchGLCD@i i `i  1 a 2 18 ]
+"262
+[v putchGLCD@fontPos fontPos `i  1 a 2 16 ]
+"265
+[v putchGLCD@aux aux `i  1 a 2 13 ]
+"260
+[v putchGLCD@p p `uc  1 a 1 wreg ]
+[v putchGLCD@y y `uc  1 p 1 11 ]
+[v putchGLCD@c c `uc  1 p 1 12 ]
+"262
+[v putchGLCD@p p `uc  1 a 1 15 ]
+"273
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"242 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/GLCD.c
+[v _SetDot SetDot `(v  1 e 1 0 ]
+{
+[v SetDot@x x `uc  1 a 1 wreg ]
+"244
+[v SetDot@page page `i  1 a 2 23 ]
+"246
+[v SetDot@read read `i  1 a 2 21 ]
+"245
+[v SetDot@aux aux `i  1 a 2 19 ]
+"242
+[v SetDot@x x `uc  1 a 1 wreg ]
+[v SetDot@y y `uc  1 p 1 15 ]
+"244
+[v SetDot@x x `uc  1 a 1 25 ]
+"248
+} 0
+"161 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _setupGame setupGame `(v  1 e 1 0 ]
+{
+[s S30 pos 2 `uc 1 y 1 0 `uc 1 x 1 1 ]
+"168
+[v setupGame@start_position start_position `S30  1 a 2 22 ]
+"161
+[s S33 Serpent 65 `[31]S30 1 _body 62 0 `uc 1 _head_idx 1 62 `uc 1 _tail_idx 1 63 `uc 1 size 1 64 ]
+[v setupGame@_serp _serp `*.30S33  1 p 1 20 ]
+[v setupGame@_apple _apple `*.30S30  1 p 1 21 ]
+"172
+} 0
+"12 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+{
+"17
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"68 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _append append `(v  1 e 1 0 ]
+{
+"79
+[v append@it it `uc  1 a 1 3 ]
+[s S30 pos 2 `uc 1 y 1 0 `uc 1 x 1 1 ]
+"68
+[s S33 Serpent 65 `[31]S30 1 _body 62 0 `uc 1 _head_idx 1 62 `uc 1 _tail_idx 1 63 `uc 1 size 1 64 ]
+[v append@_serp _serp `*.30S33  1 p 1 0 ]
+[v append@target target `*.30CS30  1 p 1 1 ]
+"87
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 19 ]
+[v ___awmod@counter counter `uc  1 a 1 18 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 14 ]
+[v ___awmod@divisor divisor `i  1 p 2 16 ]
+"34
+} 0
+"90 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _pos_ok pos_ok `(uc  1 e 1 0 ]
+{
+"99
+[v pos_ok@it it `uc  1 a 1 3 ]
+[s S30 pos 2 `uc 1 y 1 0 `uc 1 x 1 1 ]
+"90
+[s S33 Serpent 65 `[31]S30 1 _body 62 0 `uc 1 _head_idx 1 62 `uc 1 _tail_idx 1 63 `uc 1 size 1 64 ]
+[v pos_ok@_serp _serp `*.30CS33  1 p 1 0 ]
+"106
+} 0
+"127
+[v _configPIC configPIC `(v  1 e 1 0 ]
+{
+"145
+} 0
+"222 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/GLCD.c
+[v _clearGLCD clearGLCD `(v  1 e 1 0 ]
+{
+[v clearGLCD@ri ri `uc  1 a 1 wreg ]
+"224
+[v clearGLCD@j j `i  1 a 2 20 ]
+[v clearGLCD@i i `i  1 a 2 18 ]
+"222
+[v clearGLCD@ri ri `uc  1 a 1 wreg ]
+[v clearGLCD@re re `uc  1 p 1 11 ]
+[v clearGLCD@ci ci `uc  1 p 1 12 ]
+[v clearGLCD@ce ce `uc  1 p 1 13 ]
+"226
+[v clearGLCD@ri ri `uc  1 a 1 17 ]
+"229
+} 0
+"109 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/main.c
+[v _advance advance `(v  1 e 1 0 ]
+{
+"111
+[v advance@it it `uc  1 a 1 2 ]
+[s S30 pos 2 `uc 1 y 1 0 `uc 1 x 1 1 ]
+"109
+[s S33 Serpent 65 `[31]S30 1 _body 62 0 `uc 1 _head_idx 1 62 `uc 1 _tail_idx 1 63 `uc 1 size 1 64 ]
+[v advance@_serp _serp `*.30S33  1 p 1 0 ]
+"121
+} 0
+"138 C:\Users\zanet\Documents\fib_ingenieria\Q3\INTERFÍCIES DE COMPUTADORS\LAB2\L4\sesio_A\L4_A_sesion_G\PIC18F45K22/GLCD.c
+[v _GLCDinit GLCDinit `(v  1 e 1 0 ]
+{
+"144
+} 0
+"100
+[v _setStartLine setStartLine `(v  1 e 1 0 ]
+{
+[v setStartLine@z z `uc  1 a 1 wreg ]
+[v setStartLine@z z `uc  1 a 1 wreg ]
+"102
+[v setStartLine@z z `uc  1 a 1 4 ]
+"104
+} 0
+"250
+[v _ClearDot ClearDot `(v  1 e 1 0 ]
+{
+[v ClearDot@x x `uc  1 a 1 wreg ]
+"252
+[v ClearDot@page page `i  1 a 2 23 ]
+"254
+[v ClearDot@read read `i  1 a 2 21 ]
+"253
+[v ClearDot@aux aux `i  1 a 2 19 ]
+"250
+[v ClearDot@x x `uc  1 a 1 wreg ]
+[v ClearDot@y y `uc  1 p 1 15 ]
+"252
+[v ClearDot@x x `uc  1 a 1 25 ]
+"256
+} 0
+"148
+[v _writeByte writeByte `(v  1 e 1 0 ]
+{
+[v writeByte@p p `uc  1 a 1 wreg ]
+"150
+[v writeByte@chip chip `uc  1 a 1 10 ]
+"148
+[v writeByte@p p `uc  1 a 1 wreg ]
+[v writeByte@y y `uc  1 p 1 5 ]
+[v writeByte@data data `uc  1 p 1 6 ]
+"150
+[v writeByte@p p `uc  1 a 1 7 ]
+"173
+} 0
+"212
+[v _readByte readByte `(uc  1 e 1 0 ]
+{
+[v readByte@p p `uc  1 a 1 wreg ]
+"214
+[v readByte@aux aux `uc  1 a 1 13 ]
+"212
+[v readByte@p p `uc  1 a 1 wreg ]
+[v readByte@y y `uc  1 p 1 12 ]
+"215
+[v readByte@p p `uc  1 a 1 14 ]
+"218
+} 0
+"175
+[v _readByteReal readByteReal `(uc  1 e 1 0 ]
+{
+[v readByteReal@p p `uc  1 a 1 wreg ]
+"178
+[v readByteReal@chip chip `uc  1 a 1 11 ]
+"177
+[v readByteReal@data data `uc  1 a 1 10 ]
+"175
+[v readByteReal@p p `uc  1 a 1 wreg ]
+[v readByteReal@y y `uc  1 p 1 5 ]
+[v readByteReal@first first `uc  1 p 1 6 ]
+"178
+[v readByteReal@p p `uc  1 a 1 7 ]
+"206
+} 0
+"116
+[v _setYAddress setYAddress `(v  1 e 1 0 ]
+{
+[v setYAddress@y y `uc  1 a 1 wreg ]
+[v setYAddress@y y `uc  1 a 1 wreg ]
+"118
+[v setYAddress@y y `uc  1 a 1 4 ]
+"126
+} 0
+"108
+[v _setXAddress setXAddress `(v  1 e 1 0 ]
+{
+[v setXAddress@page page `uc  1 a 1 wreg ]
+[v setXAddress@page page `uc  1 a 1 wreg ]
+"110
+[v setXAddress@page page `uc  1 a 1 4 ]
+"112
+} 0
+"75
+[v _sendGLCDCommand sendGLCDCommand `(v  1 e 1 0 ]
+{
+[v sendGLCDCommand@val val `uc  1 a 1 wreg ]
+[v sendGLCDCommand@val val `uc  1 a 1 wreg ]
+[v sendGLCDCommand@CS CS `uc  1 p 1 2 ]
+"77
+[v sendGLCDCommand@val val `uc  1 a 1 3 ]
+"96
+} 0
+"44
+[v _GLCDBusyWait GLCDBusyWait `(v  1 e 1 0 ]
+{
+"45
+[v GLCDBusyWait@CS CS `uc  1 a 1 wreg ]
+"46
+[v GLCDBusyWait@valor valor `uc  1 a 1 0 ]
+"45
+[v GLCDBusyWait@CS CS `uc  1 a 1 wreg ]
+"47
+[v GLCDBusyWait@CS CS `uc  1 a 1 1 ]
+"70
+} 0

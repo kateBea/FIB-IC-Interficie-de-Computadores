@@ -1,0 +1,105 @@
+There are three steps in interrupt programming:
+
+Step 1. Write the service routine
+
+Step 2. Initialize the interrupt vector table 
+(i.e., place the starting address of each interrupt 
+service routine in the table). This can be done 
+by using the assembler directive ORG (or its equivalent):
+ORG Oxkk
+dw ISR_1
+dw ISR_2
+
+Step 3. Enable interrupts to be serviced. Appropriate 
+interrupt enable bits must be set in order to enable 
+interrupt to occur.
+
+The PIC18 MCU has the following interrupt sources:
+    - Four edge-triggered INT pin (INTO . . . INT3) interrupts.
+    - Port B pins change (any one of upper four port B pins) interrupts.
+    - On-chip peripheral function interrupts. Because PIC18 members do not implement
+    the same number of peripheral functions, they do not have the same number of
+    peripheral interrupts.
+
+The PIC18 MCU allows the user to have the option to divide all interrupts into two categories:
+high-priority group and low-priority group. When the application requires certain interrupts
+to receive closer attention, the user can place them in the high-priority group. If the
+application does not need to differentiate the importance of interrupts, the user can choose not
+to enable priority scheme.
+
+    -> REGISTERS RELATED TO INTERRUPTS
+        1. RCON
+        2. INTCON
+        3. INTCON2
+        4. INTCON3
+        5. PIR1, PIR2 and PIR3
+        6. PIE1, PIE2 and PIE3
+        7. IPR1, IPR2 and IPR3
+
+        Each interrupt source has three bits to control 
+        its operation. These bits are the following:
+
+            - flag bit(IF): indicates if interrupt event ocurred
+            - enable bit (IE): enable/disable interrupt source
+            - priority flag (IP): selecting high priority or low priority, 
+            this sit only has effect when the priorities are is enabled. 
+
+        (FOR MORE DETAILED INFO, CHECK DATASHEET)
+
+        RCON->IPEN: enable interrupt priorities
+
+    Interrupt Control Registers (INTCON, INTCONZ, INTCONS):
+        - These three registers contain enable, priority, and 
+        flag bits for external interrupt (INT) pins, port B pin change, 
+        and Timer 0 (TMRO) overflow interrupts.
+
+        - The INTO pin interrupt does not have a priority bit for 
+        the user to select its interrupt priority. In fact, INTO
+        interrupt is always at the high priority because its request 
+        appears in both the high-priority and the low-priority logic circuit.
+
+        - It is important to know that when the priority scheme is enabled, 
+        the user needs to set the GIEH bit (bit 7) in order to enable the 
+        low-priority interrupts. Setting the GIEL bit without setting
+        the GIEH bit will not enable any low-priority interrupts.
+
+        
+    The PIE registers contain the individual enable bits for the peripheral
+    interrupts. When the IPEN bit (RCON<7>) is 0, the PEIE bit must be set 
+    to enable any of these peripheral interrupts.
+
+    The IPR registers contain the individual priority bits for the peripheral interrupts. These
+    registers have effect only when the interrupt priority enable (IPEN) bit is set. By enabling interrupt
+    priority and setting the associated priority bit, the user can place any peripheral interrupt
+    at high or low priority
+
+    The PIC 18 has the following peripheral interrupts:
+        - Parallel slave port interrupt (not available in devices with 28 pins or less)
+        - Analog-to-digital (AID) conversion complete interrupt
+        - USARTl receive interrupt
+        - USARTl transmit interrupt
+        - Master synchronous serial port (SPI) interrupt
+        - CCPl interrupt
+        - TMR2 to PR2 match interrupt
+        - TMRl overflow interrupt
+        - Comparator interrupt
+        - Data EEPROM/Flash write operation interrupt
+        - Bus collision interrupt
+        - Low-voltage detect interrupt
+        - TMR3 overflow interrupt
+        - CCP2 interrupt
+        - USART2 receive interrupt (not all PIC18 devices have this interrupt)
+        - USART2 transmit interrupt (not all PIC18 devices have this interrupt)
+        - TMR4 overflow interrupt (not all PIC18 devices have this interrupt)
+        - CCP5 interrupt (not all PIC18 devices have this interrupt)
+        - CCP4 interrupt (not all PIC18 devices have this interrupt)
+        - CCP3 interrupt (not all PIC18 devices have this interrupt)
+        - Invalid message on CAN bus interrupt (available only in devices with CAN controller)
+        - Activity on CAN bus interrupt (available only in devices with CAN controller)
+        - CAN bus error interrupt (available only in devices with CAN controller)
+        - CAN transmission buffer 2 interrupt (available only in devices with CAN controller)
+        - CAN transmission buffer 1 interrupt (available only in devices with CAN controller)
+        - CAN transmission buffer 0 interrupt (available only in devices with CAN controller)
+        - CAN receive buffer 1 interrupt (available only in devices with CAN controller)
+        - CAN receive buffer 0 interrupt (available only in devices with CAN controller)
+        
