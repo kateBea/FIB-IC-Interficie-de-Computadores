@@ -2,7 +2,7 @@
 Repositorio del curso de Interficie de Computadores en el grado de Ingeniería Informática en la FIB UPC
 
 # Notas:
-| Lab  | Second Header |
+| Laboratorio  | Nota Evaluación |
 | ------------- | ------------- |
 | [ L1 ]  &nbsp;Electrònica | 7.21  |
 | [ L2 ]  &nbsp;Entrda/Sortida | 9.70 |
