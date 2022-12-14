@@ -4,7 +4,7 @@ Repositorio del curso de Interficie de Computadores en el grado de Ingeniería I
 # Notas:
 | Lab  | Second Header |
 | ------------- | ------------- |
-| [ L1 ]  Electrònica | 7.21  |
+| [ L1 ]  &nbsp; Electrònica | 7.21  |
 | [ L2 ]  Entrda/Sortida | 9.70 |
 | [ L3 ]  7 Segments | 7.82  |
 | [ L4 ]  GLCD | 6.18 |
