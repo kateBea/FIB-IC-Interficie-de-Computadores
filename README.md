@@ -12,7 +12,7 @@ Repositorio del curso de Interficie de Computadores en el grado de Ingeniería I
 | [ L6 ]  &nbsp;[CCP i ADC](Laboratorios/L6) | 9.13  |
 
 Les transparències al directori <b>Temario</b> no constituïexen el temari principal de l'assignatura,
-només erveizen de guia per les classes. Es aconsellable adquirir el llibre suggerit a l'apartat de bibliografia de
+només serveixen de guia per les classes. Es aconsellable adquirir el llibre suggerit a l'apartat de bibliografia de
 la primera transparència d'introducció al temari. A part d'això, el [Datasheet](Extras/Datasheet) conté tota la informació
 relativa al micro amb què es treballa als Labs.
 
